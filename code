@@ -1,0 +1,30 @@
+#include<stdio.h>
+int main()
+{
+    int n,i = 0,a,r,b,c,prod = 1,sum = 0;
+    printf("Enter the number\n");
+    scanf("%d",&n);
+    a = n;
+    while(a){
+        i = i + 1;
+        a = a / 10;
+    }
+    a = n;
+    for(c = 1; c <= i; c++){
+        b = a % 10;
+        prod = 1;
+        for(r = 1; r <= i; r++){
+            prod = prod * b;
+        }
+        sum = sum + prod;
+      
+        a = a / 10;
+    }
+    if (sum==n){
+        printf("%d is armstrong number",n);
+    }
+    else{
+        printf("%d is not armstrong number",n);
+    }
+    return 0;
+}
